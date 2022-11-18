@@ -1,0 +1,33 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+.h1 {
+  margin: 0;
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 86, 30);
+  @include adaptiveDesktopToMobile('line-height', 90, 36);
+}
+
+.h2 {
+  margin: 0;
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 60, 19);
+  @include adaptiveDesktopToMobile('line-height', 70, 24);
+}
+
+.text {
+  &-xs {
+    @include adaptiveDesktopToMobile('font-size', 18, 16);
+    @include adaptiveDesktopToMobile('line-height', 25, 20);
+  }
+  &-s {
+    @include adaptiveDesktopToMobile('font-size', 20, 14);
+    @include adaptiveDesktopToMobile('line-height', 25, 14);
+  }
+  &-m {
+    font-weight: 500;
+    @include adaptiveDesktopToMobile('font-size', 33, 16);
+    @include adaptiveDesktopToMobile('line-height', 40, 20);
+  }
+}

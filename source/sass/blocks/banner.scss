@@ -1,0 +1,20 @@
+.banner {
+  background: $color-dodger-blue;
+  position: relative;
+  @include adaptiveDesktopToMobile('padding-top', 62, 50);
+  @include adaptiveDesktopToMobile('padding-bottom', 78, 56);
+}
+.banner__text {
+  color: $color-default-white;
+  position: relative;
+  z-index: 1;
+  @include adaptiveDesktopToMobile('max-width', 1248, 294);
+  @include adaptiveDesktopToMobile('font-size', 60, 23);
+}
+.banner__bg {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 100%;
+}

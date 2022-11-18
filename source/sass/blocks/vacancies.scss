@@ -1,0 +1,166 @@
+.vacancies {
+  @include adaptiveDesktopToMobile('padding-top', 120, 60);
+}
+.vacancies__list {
+  @include reset-list;
+}
+.vacancies__vacancy {
+  border-bottom: 1px solid $color-default-black;
+
+  &:first-child {
+    border-top: 1px solid $color-default-black;
+  }
+
+  &.is-active {
+    .vacancies__vacancy-name {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.vacancies__vacancy-name {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 33, 16);
+  @include adaptiveDesktopToMobile('line-height', 40, 20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  @include adaptiveDesktopToMobile('padding', 22, 12);
+  padding-left: 0!important;
+  text-align: left;
+  
+  &::after {
+    content: '';
+    width: 30px;
+    height: 28px;
+    background-image: url('../img/svg/vacancy-arrow.svg');
+    background-size: 100% 100%;
+    flex: 0 0 30px;
+    transition: $trans-default;
+  }
+
+  @include vp-767 {
+    &::after {
+      width: 20px;
+      height: 18px;
+    }
+  }
+}
+.vacancies__vacancy-content {
+  @include adaptiveDesktopToMobile('font-size', 24, 16);
+  @include adaptiveDesktopToMobile('line-height', 30, 20);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include adaptiveDesktopToMobile('gap', 70, 35);
+
+  &::after {
+    content: '';
+    display: block;
+    @include adaptiveDesktopToMobile('height', 25, 15);
+    grid-column: span 2;
+  }
+
+  @include vp-767 {
+    grid-template-columns: auto;
+
+    &::after {
+      order: 1001;
+      grid-column: span 1;
+    }
+  }
+}
+.vacancies__vacancy-paragraph {
+  max-width: 1220px;
+
+  &:first-child {
+    padding-top: 10px;
+  }
+}
+.vacancies__vacancy-item {
+  &--big {
+    grid-column: span 2;
+  }
+
+  &--uncolored {
+    .vacancies__vacancy-item-title {
+      color: inherit;
+    }
+
+    .vacancies__vacancy-list-item {
+      &::marker {
+        color: inherit;
+      }
+    }
+  }
+
+  @include vp-767 {
+    &--big {
+      grid-column: span 1;
+    }
+
+    &--mobile-last {
+      order: 999;
+    }
+  }
+}
+.vacancies__vacancy-item-title {
+  font-weight: 500;
+  @include adaptiveDesktopToMobile('font-size', 24, 16);
+  @include adaptiveDesktopToMobile('line-height', 30, 20);
+  margin: 0;
+  @include adaptiveDesktopToMobile('margin-bottom', 40, 20);
+  color: $color-dodger-blue;
+}
+.vacancies__vacancy-list {
+  @include vp-767 {
+    padding-left: 30px;
+  }
+}
+.vacancies__vacancy-list-item {
+  &:not(:last-child) {
+    @include adaptiveDesktopToMobile('margin-bottom', 20, 10);
+  }
+
+  &::marker {
+    color: $color-dodger-blue;
+    @include adaptiveDesktopToMobile('font-size', 30, 24);
+  }
+}
+.vacancies__vacancy-skills {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -3px;
+  max-width: 380px;
+
+  @include vp-767 {
+    max-width: 280px;
+  }
+}
+.vacancies__vacancy-skill {
+  border: 2.5px solid $color-dodger-blue;
+  color: $color-dodger-blue;
+  border-radius: 414.536px;
+  padding: 10px 25px;
+  margin: 3px;
+
+  @include vp-767 {
+    padding: 7px 18px;
+  }
+}
+
+.vacancies__vacancy-link {
+  color: $color-default-white;
+  background-color: $color-dodger-blue;
+
+  &:hover {
+    background-color: lighten($color: $color-dodger-blue, $amount: 15);
+  }
+
+  @include vp-767 {
+    width: 100%;
+    order: 1000;
+  }
+}

@@ -1,0 +1,112 @@
+.about {
+  @include adaptiveDesktopToMobile('padding-top', 60, 30);
+
+  span {
+    color: $color-dodger-blue;
+
+    &.i {
+      border: 2px solid $color-dodger-blue;
+      border-radius: 50px;
+      padding: 0 25px;
+      @include adaptiveDesktopToMobile('line-height', 85, 24);
+      white-space: nowrap;
+    }
+  }
+
+  @include vp-767 {
+    span {
+      &.i {
+        white-space: unset;
+        border: unset;
+        padding: 0;
+        @include adaptiveDesktopToMobile('line-height', 70, 24);
+      }
+    }
+  }
+}
+.about__description {
+  @include adaptiveDesktopToMobile('padding-bottom', 80, 35);
+
+  &--mobile {
+    display: none;
+  }
+
+  @include vp-767 {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      display: block;
+    }
+  }
+}
+.about__list-wrapper {
+  background-color: $color-alice-blue;
+  @include adaptiveDesktopToMobile('padding-bottom', 110, 30);
+  @include adaptiveDesktopToMobile('padding-top', 110, 30);
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1.46fr;
+    @include adaptiveDesktopToMobile('gap', 150, 36);
+  }
+
+  @include vp-767 {
+    .container {
+      grid-template-columns: auto;
+    } 
+  }
+}
+.about__list-title {
+  
+}
+.about__list {
+  @include reset-list;
+}
+.about__list-item {
+  display: flex;
+
+  &:not(:last-child) {
+    @include adaptiveDesktopToMobile('margin-bottom', 30, 15);
+  }
+}
+.about__list-item-number {
+  @include adaptiveDesktopToMobile('margin-right', 16, 8);
+  @include adaptiveDesktopToMobile('min-width', 100, 50);
+  @include adaptiveDesktopToMobile('height', 50, 25);
+  border: 2.5px solid #0077FF;
+  @include adaptiveDesktopToMobile('border-radius', 200, 100);
+  position: relative;
+
+  span {
+    position: absolute;
+    display: block;
+    min-width: 20px;
+    top: 50%;
+    left: 67%;
+    transform: translateY(-50%);
+    text-align: right;
+    transition: $trans-default;
+  }
+
+  &:hover {
+    span {
+      left: 10%;
+    }
+  }
+
+  @include vp-1023 {
+    span {
+      left: 60%;
+    }
+  }
+
+  @include vp-1023 {
+    span {
+      left: 45%;
+    }
+  }
+}
+.about__list-item-name {
+}

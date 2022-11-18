@@ -1,35 +1,46 @@
-<header class="header @@if (context.mod) { header--@@mod }">
+<header class="header">
   <div class="container">
-    @@if (!context.index) {
-      <a class="header__logo" href="index.html" aria-label="Переход на главную">
-        Логотип
-      </a>
-    }
-    @@if (context.index) {
-      <span class="header__logo">
-        Логотип
-      </span>
-    }
-
-    <nav class="main-nav">
-      <button class="main-nav__toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="#icon-burger"></use>
-        </svg>
-      </button>
-      <div class="main-nav__wrapper">
-        <ul class="main-nav__list">
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 0) { is-active }" @@if (context.headerActiveLinkIndex !== 0) { href="#" }>Страница 1</a>
+    <div class="header__top-wrapper">
+      <img src="img/svg/header-logo.svg" class="header__logo" width="40" height="40">
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-list-item">
+            <a href="#about" class="header__menu-link">О VK WorkSpace</a>
           </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 1) { is-active }" @@if (context.headerActiveLinkIndex !== 1) { href="#" }>Страница 2</a>
+          <li class="header__menu-list-item">
+            <a href="#vacancies" class="header__menu-link">Вакансии</a>
           </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 2) { is-active }" @@if (context.headerActiveLinkIndex !== 2) { href="#" }>Страница 3</a>
+          <li class="header__menu-list-item">
+            <a href="#how" class="header__menu-link">Этапы</a>
           </li>
         </ul>
+      </nav>
+    </div>
+    <div class="header__date header__date--mobile">
+      <span>26-27 ноября</span> онлайн
+    </div>
+    <ul class="header__directions-list">
+      <li class="header__directions-list-item">Frontend</li>
+      <li class="header__directions-list-item">Go</li>
+      <li class="header__directions-list-item">Python</li>
+    </ul>
+    <h1 class="header__title h1">
+      Weekend Offer 
+      <div class="header__date header__date--desktop">
+        <div class="header__date-number">26-27</div>
+        <div class="header__date-text">
+          <div class="header__date-month">ноября</div>
+          <div class="header__date-how">онлайн</div>
+        </div>
       </div>
-    </nav>
+      <br>
+      для разработчиков <br>
+      в&nbsp;VK&nbsp;WorkSpace
+    </h1>
+    <div class="header__description text-m">
+      Weekend Offer в&nbsp;VK&nbsp;&mdash; редкий шанс попасть в&nbsp;команду профессионалов всего за&nbsp;одни выходные
+    </div>
+    <a href="#vacancies" class="header__run btn">Участвовать</a>
   </div>
+  <img src="img/svg/header-bg.svg" class="header__bg" width="403" height="806">
 </header>

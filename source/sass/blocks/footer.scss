@@ -1,5 +1,79 @@
 .footer {
-  padding: 40px 0;
+  position: relative;
 
-  background-color: $color-neon-blue;
+  @include vp-767 {
+    color: $color-default-white;
+    padding: 45px 0 85px;
+  }
+}
+.footer__text {
+  @include adaptiveDesktopToMobile('max-width', 1050, 280);
+  
+  span {
+    color: $color-dodger-blue;
+  }
+
+  @include vp-767 {
+    font-size: 30px;
+    line-height: 35px;
+
+    span {
+      color: $color-default-white;
+    }
+  }
+}
+.footer__link {
+  color: $color-default-white;
+  background-color: $color-dodger-blue;
+  margin: 40px 0 0 auto;
+  @include adaptiveDesktopToMobile('margin-right', 220, 0);
+
+  &:hover {
+    background-color: lighten($color: $color-dodger-blue, $amount: 15);
+  }
+
+  @include vp-767 {
+    background-color: $color-default-white;
+    color: $color-dodger-blue;
+    width: 210px;
+    height: 60px;
+    margin: 80px auto 0;
+    font-size: 20px;
+    line-height: 120%;
+  }
+}
+.footer__line {
+  height: 230px;
+  background-color: $color-dodger-blue;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 110px;
+
+  @include vp-767 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    margin: 0;
+  }
+}
+.footer__line-bg {
+  &--mobile {
+    display: none;
+  }
+
+  @include vp-767 {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }

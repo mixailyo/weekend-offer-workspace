@@ -19,13 +19,14 @@ const refresh = (done) => {
 const syncServer = () => {
   server.init({
     server: 'build/',
-    index: 'sitemap.html',
+    index: 'index.html',
     notify: false,
     open: true,
     cors: true,
     ui: false,
   });
 
+  gulp.watch('source/html/**/*.html', gulp.series(html, refresh));
   gulp.watch('source/pug/**/*.pug', gulp.series(html, refresh));
   gulp.watch('source/sass/**/*.{scss,sass}', streamStyles);
   gulp.watch('source/js/**/*.{js,json}', gulp.series(js, refresh));
